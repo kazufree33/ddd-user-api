@@ -6,7 +6,24 @@ info:
 paths:
   /user:
     get:
+      operationId: getUser
       responses:
         '200':
-          description: OK
+          description: response 200 and body
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+
+components:
+  schemas:
+    UserResponse:
+      type: object
+      properties:
+        email:
+          type: string
+          description: user of email
+        name:
+          type: string
+          description: user of name
 
