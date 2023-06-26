@@ -9,5 +9,5 @@ Spring BootにDDD（ドメイン駆動設計）をパッケージ構成を
 フレームワーク：Spring Boot 3.1.1<br>
 DB：H2
 
-
-
+# API実行方法
+src/main/resources/api-schema.yaml　参照
