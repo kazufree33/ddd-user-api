@@ -9,7 +9,7 @@ public class UserOutputDTO {
     private String email;
     private String name;
     public UserOutputDTO(User user){
-        this.email = user.getEmail();
-        this.name = user.getName();
+        this.email = user.getEmail().getEmail();
+        this.name = user.getName().getName();
     }
 }

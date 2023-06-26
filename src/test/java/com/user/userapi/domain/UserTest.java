@@ -7,6 +7,6 @@ public class UserTest {
 
     @Test
     void test() {
-        Assertions.assertEquals("test@example.com", UserTestFixture.UserA().getEmail());
+        Assertions.assertEquals("test@example.com", UserTestFixture.UserA().getEmail().getEmail());
     }
 }

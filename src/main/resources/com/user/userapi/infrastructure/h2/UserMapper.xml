@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.user.userapi.infrastructure.h2.UserMapper">
+
+    <resultMap id="UserMap" type="com.user.userapi.domain.User">
+        <association property="email" javaType="com.user.userapi.domain.Email">
+            <constructor>
+                <arg name="email" column="email"></arg>
+            </constructor>
+        </association>
+        <association property="name" javaType="com.user.userapi.domain.Name">
+            <constructor>
+                <arg name="name" column="name"></arg>
+            </constructor>
+        </association>
+    </resultMap>
+
+    <select id="findByEmail" resultMap="UserMap" parameterType="map">
+        SELECT * FROM users WHERE email = #{email.email}
+    </select>
+
+</mapper>

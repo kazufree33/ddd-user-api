@@ -1,11 +1,10 @@
 package com.user.userapi.domain;
 
-import lombok.Value;
+import lombok.Data;
 
-@Value
+@Data
 public class User {
 
-    private String email;
-
-    private String name;
+    Email email;
+    Name name;
 }

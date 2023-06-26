@@ -1,5 +1,6 @@
 package com.user.userapi.presentation;
 ;
+import com.user.userapi.domain.Email;
 import com.user.userapi.model.UserResponse;
 import com.user.userapi.usecase.UserUseCase;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ public class UserController implements UserApi {
 
     @Override
     public ResponseEntity<UserResponse> getUser() {
-        String email = "test@example.com";
+        Email email = new Email("test@example.com");
         UserOutputDTO userOutputDTO = userUseCase.findByEmail(email);
         return ResponseEntity.ok(new UserResponse().email(userOutputDTO.getEmail())
                 .name(userOutputDTO.getName()));

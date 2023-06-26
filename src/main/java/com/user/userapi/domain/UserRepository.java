@@ -1,12 +1,10 @@
 package com.user.userapi.domain;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
-@Mapper
+@Repository
 public interface UserRepository {
-
-    @Select("select * from users limit 1")
-    User findByEmail(String email);
+    User findByEmail(@Param("email") Email email);
 
 }
