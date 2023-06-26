@@ -16,9 +16,9 @@ public class UserController implements UserApi {
     private final UserUseCase userUseCase;
 
     @Override
-    public ResponseEntity<UserResponse> getUser() {
-        Email email = new Email("test@example.com");
-        UserOutputDTO userOutputDTO = userUseCase.findByEmail(email);
+    public ResponseEntity<UserResponse> getUser(String email) {
+        Email findEmail = new Email(email);
+        UserOutputDTO userOutputDTO = userUseCase.findByEmail(findEmail);
         return ResponseEntity.ok(new UserResponse().email(userOutputDTO.getEmail())
                 .name(userOutputDTO.getName()));
     }

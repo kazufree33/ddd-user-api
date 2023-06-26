@@ -16,7 +16,7 @@ public class UserControllerTests {
 
     @Test
     void test() throws Exception {
-        mockMvc.perform(get("/user"))
+        mockMvc.perform(get("/user?email=test@example.com"))
                 .andExpect(status().isOk());
     }
 

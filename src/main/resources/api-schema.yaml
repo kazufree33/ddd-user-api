@@ -6,6 +6,14 @@ info:
 paths:
   /user:
     get:
+      parameters:
+        - in: query
+          name: email
+          description: use of email
+          required: true
+          schema:
+           type: string
+           example: test@example.com
       operationId: getUser
       responses:
         '200':
